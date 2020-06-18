@@ -15,6 +15,11 @@ import com.paypal.base.rest.PayPalRESTException;
 import com.paypal.dto.ResponseDto;
 import com.paypal.service.impl.PaypalPaymentServiceImpl;
 
+/**
+ * @author Ravi
+ *
+ *This is Controller call will for Paypal Merchant all services available here.
+ */
 @RestController
 public class PayPalPaymentGatewayController {
 	Logger logger = Logger.getLogger(PayPalPaymentGatewayController.class.getName());
@@ -25,7 +30,21 @@ public class PayPalPaymentGatewayController {
 
 	@Autowired
 	private PaypalPaymentServiceImpl serviceImpl;
+	
+	/**
+	 * This Method will load product Deatils
+	 * @return
+	 */
+	@GetMapping("/")
+	public String getHomePage() {
+		return "home";
+	}
 
+	/**
+	 * once the prodcut Details added to the cart here we connect with paypal merchant and will do payment.
+	 * @param responseDto
+	 * @return
+	 */
 	@PostMapping(value = "/pay" ,produces = MediaType.TEXT_PLAIN_VALUE)
 	public String payment(@ModelAttribute("responseDto") ResponseDto responseDto){
 		try {
@@ -45,12 +64,22 @@ public class PayPalPaymentGatewayController {
 		return "redirect:/";
 	}
 	
+	/**
+	 * This will redirect cancel url if payment is cancled.
+	 * @return
+	 */
 	@GetMapping(value = CANCEL_URL)
 	public String paymaentCanceled() {
 		return "cancelpayment";
 	}
 	
 
+    /**
+     * This will called once payment is success and shows success response to the user.
+     * @param paymentId
+     * @param payerId
+     * @return
+     */
     @GetMapping(value = SUCCESS_URL)
     public String successPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId) {
         try {

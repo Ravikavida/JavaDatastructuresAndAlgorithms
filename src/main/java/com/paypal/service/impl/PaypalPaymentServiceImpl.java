@@ -20,12 +20,19 @@ import com.paypal.api.payments.Transaction;
 
 import com.paypal.base.rest.PayPalRESTException;
 
+/**
+ * @author Ravi
+ *
+ */
 @Service
 public class PaypalPaymentServiceImpl implements PayPalpaymentService {
 
 	@Autowired
 	private APIContext context;
 
+	/**
+	 *This method will process the payment through paypal merchant
+	 */
 	@Override
 	public Payment createayment(Double total, String currency, String method, String intent, String description,
 			String cancelUrl, String successUrl) throws PayPalRESTException {
@@ -57,6 +64,9 @@ public class PaypalPaymentServiceImpl implements PayPalpaymentService {
 		return payment.create(context);
 	}
 
+	/**
+	 *Thise method will verify the payment id and payerid and execute the payment.
+	 */
 	@Override
 	public Payment executePayment(String paymentId, String payerId) throws PayPalRESTException {
 		Payment payment = new Payment();

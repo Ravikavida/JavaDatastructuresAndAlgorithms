@@ -11,6 +11,11 @@ import com.paypal.base.rest.APIContext;
 import com.paypal.base.rest.OAuthTokenCredential;
 import com.paypal.base.rest.PayPalRESTException;
 
+/**
+ * @author Ravi
+ *
+ *This is Configuration class which will read details from application.properties.
+ */
 @Configuration
 public class PaypalConfiguraion {
 
@@ -31,6 +36,10 @@ public class PaypalConfiguraion {
 	return map;
 	
 	}
+	/**
+	 * @return
+	 * This method is to check authentication details for Paypal merchant details. 
+	 */
 	@Bean
 	public OAuthTokenCredential getcredintials() {
 		return new OAuthTokenCredential(clientId, secretekey, getPaypalsdkConfigDetails());

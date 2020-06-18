@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.paytm.entity.PaytmMerchantDetailsEntity;
 import com.paytm.pg.merchant.CheckSumServiceHelper;
 
+/**
+ * @author Ravi
+ *
+ */
 @RestController
 public class PaytmController {
 
@@ -26,11 +31,23 @@ public class PaytmController {
 	@Autowired
 	private Environment env;
 
+	/**
+	 * this method will call welcome page.
+	 * @return
+	 */
 	@GetMapping("/")
 	public String mainPage() {
 		return "paytmhome";
 	}
 
+	/**
+	 * this method is redirect from home page to paytm merchant payment page.
+	 * @param customerId
+	 * @param transactionAmount
+	 * @param orderId
+	 * @return
+	 * @throws Exception
+	 */
 	@PostMapping("/pgredirect")
 	public ModelAndView getRedirect(@RequestParam(name = "CUST_ID") String customerId,
 			@RequestParam(name = "TXN_AMOUNT") String transactionAmount,
@@ -59,7 +76,13 @@ public class PaytmController {
 	                parameters, paytmChecksum);
 	    }
 
-	  @PostMapping(value = "/pgresponse")
+	  /**
+	   * This method will return the json response once the payment is success.
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@PostMapping(value = "/pgresponse",produces = MediaType.APPLICATION_JSON_VALUE)
 	    public String getResponseRedirect(HttpServletRequest request, Model model) {
 
 	        Map<String, String[]> mapData = request.getParameterMap();
