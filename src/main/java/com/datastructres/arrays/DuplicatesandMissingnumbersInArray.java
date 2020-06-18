@@ -41,7 +41,7 @@ public class DuplicatesandMissingnumbersInArray {
 
 	public static void main(String[] args) {
 		
-	System.out.println(	DuplicatesandMissingnumbersInArray.getmissingAndDuplicate(new int[] {3,4,3,4,3,2}));
+	System.out.println(	DuplicatesandMissingnumbersInArray.getmissingAndDuplicate(new int[] {4,3,4,5,1}));
 	}
 
 }
