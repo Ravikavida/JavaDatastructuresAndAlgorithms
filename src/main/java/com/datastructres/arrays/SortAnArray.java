@@ -10,13 +10,13 @@ public class SortAnArray {
 			return;
 		}
 		while(i < arr.length) {
-			if(arr[i] != arr[arr[i]-1]) {
+			if(arr[i] != arr[arr[i]-1]) {  // we can use arr[i] != i+1
 				int otherIndex = arr[i]-1;
 				int x = arr[i];
 				arr[i] = arr[otherIndex];
 				arr[otherIndex] = x;
 			}else {
-			i++;
+			i++; 
 			}
 		}
 		for(int k:arr) {
