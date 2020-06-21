@@ -24,7 +24,6 @@ public class QuikSort {
 					arr[j] = temp;
 				}
 			}
-
 			temp = arr[pivot];
 			arr[pivot] = arr[j];
 			arr[j] = temp;
