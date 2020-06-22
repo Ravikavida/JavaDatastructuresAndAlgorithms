@@ -23,14 +23,15 @@ public class SortanArrayBasedonfrequencyOfElement {
 			if (freq1 != freq2) {
 				return freq2 - freq1;
 			}
-			return list.indexOf(k1) - list.indexOf(k2);
+			//return k1 - k2;  // 3, 3, 3, 3, 10, 10, 10, 11, 11, 11, 2, 5, 6, 7, 9, 12     if frequency is same values are sorted.
+			return list.get(k1) -list.get(k2); //3, 3, 3, 3, 10, 10, 10, 11, 11, 11, 2, 12, 6, 5, 9, 7 if frequency is same also not sorted.
 		});
-		return list;
+		return list; 
 
 	}
 
 	public static void main(String[] args) {
-		int arr[] = { 10, 10, 10, 11, 11, 2, 3, 3, 3, 3, 12 };
+		int arr[] = { 10, 10, 10, 11, 11,11, 2, 3, 3, 3, 3, 6,5,9,7,12 };
 
 		List<Integer> input = Arrays.stream(arr).boxed().collect(Collectors.toList());
 
