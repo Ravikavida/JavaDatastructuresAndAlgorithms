@@ -49,8 +49,6 @@ public class MaximuProductpair_InArray {
 		}else{
 			System.out.println(greatest+","+secondGreatest +"  :"+secondProduct);
 		}
-				
-		
 	}
 
 	public static void main(String[] args) {
