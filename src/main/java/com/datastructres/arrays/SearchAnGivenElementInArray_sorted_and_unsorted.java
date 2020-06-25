@@ -21,6 +21,7 @@ public class SearchAnGivenElementInArray_sorted_and_unsorted {
 
 	// O(logn) complexity
 	// if we have duplicate index take written type as set r list
+	//bubble sort
 	public static int getElemtfromSortedOrder(int arr[], int num,int start,int end) {
 
 		if (arr.length == 0) {
