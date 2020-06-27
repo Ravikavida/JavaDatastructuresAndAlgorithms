@@ -17,6 +17,7 @@ public class ReverseParagarphInSameOrder {
 		//converted to reverse order and stored in afterReverse varible
 		String afterReverse =  String.join(" ", Pattern.compile(" +").splitAsStream(beforeReverse)
 		        .collect(LinkedList::new, LinkedList::addFirst, (data,word)->data.addAll(0, word)));
+		System.out.println(afterReverse);
 		
 		//Splitting String afterReverse
 		String words[] = afterReverse.split(" ");
