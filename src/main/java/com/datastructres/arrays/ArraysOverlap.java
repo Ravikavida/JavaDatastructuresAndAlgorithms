@@ -2,6 +2,7 @@ package com.datastructres.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ArraysOverlap {
@@ -16,7 +17,7 @@ public class ArraysOverlap {
 					System.out.println("("+a[0]+","+a[1]+") and ("+array[i][0]+","+array[i][1]+") are overlapping ");
 					List<Integer> list = new ArrayList<>(Arrays.asList(a));
 					list.addAll(Arrays.asList(array[i]));
-					
+					System.out.println(Collections.min(list)+","+Collections.max(list));
 				}
 			}
 		});
