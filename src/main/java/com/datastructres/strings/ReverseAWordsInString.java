@@ -1,7 +1,5 @@
 package com.datastructres.strings;
 
-import java.util.Stack;
-
 public class ReverseAWordsInString {
 
 	// first way
