@@ -1,6 +1,7 @@
 package com.datastructres.heap;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +41,6 @@ public class GetTop_k_frequentElemntsInthegivenArray {
 			if (minHeap.size() < k) {
 				minHeap.add(entryset);
 			} else {
-
 				if (entryset.getValue() > minHeap.peek().getValue()) {
 					minHeap.poll();
 					minHeap.add(entryset);
