@@ -1,4 +1,4 @@
-package com.app;
+package com.hackerrank.leetcode;
 
 import com.hackerrank.test.Shape;
 

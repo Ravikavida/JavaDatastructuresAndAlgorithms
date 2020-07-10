@@ -1,4 +1,4 @@
-package com.app;
+package com.hackerrank.leetcode;
 
 public class CheckingStringPalindromeOrnotUsingBackword_forwordProcess {
 

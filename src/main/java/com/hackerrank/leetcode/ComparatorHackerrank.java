@@ -1,4 +1,4 @@
-package com.app;
+package com.hackerrank.leetcode;
 
 public class ComparatorHackerrank {
 	public boolean compare(int a, int b) {
