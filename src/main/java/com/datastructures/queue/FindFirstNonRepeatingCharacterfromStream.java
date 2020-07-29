@@ -35,11 +35,29 @@ public class FindFirstNonRepeatingCharacterfromStream {
 
 	}
 
+	// second way
+	public static char getfirstNonrepeatedchar(char arr[]) {
+		String s = "";
+		for (char c : arr) {
+			s = s + c;
+		}
+		char result =' ';
+		for (int i = 0; i < s.length(); i++) {
+			if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
+				result = s.charAt(i);
+				break;
+			}
+		}
+		System.out.println(result);
+		return result;
+	}
+
 	public static void main(String[] args) {
 
-		char[] stream = { 'a', 'a', 'b', 'k','c', 'c', 'd', 'b', 'a' };
+		char[] stream = { 'a', 'a', 'b', 'k', 'c', 'c', 'd', 'b', 'a' };
 
 		FindFirstNonRepeatingCharacterfromStream.printFirstNonrepeatedChar(stream);
+		FindFirstNonRepeatingCharacterfromStream.getfirstNonrepeatedchar(stream);
 
 	}
 
