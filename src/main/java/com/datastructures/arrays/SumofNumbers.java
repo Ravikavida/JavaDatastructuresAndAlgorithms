@@ -7,10 +7,10 @@ public class SumofNumbers {
 	}
 
 	public static void main(String[] args) {
-		int i = 36;
+		int i = 96;
 		int b = 67;
-		int sum = i + b;
-		System.out.println("sum of num: " + sum);
+		int sub = i - b;
+		System.out.println("substraction of num: " + sub);
 	}
 
 }
